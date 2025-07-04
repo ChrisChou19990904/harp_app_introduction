@@ -1,5 +1,5 @@
 {
-  "name": "${PROJECT_NAME}",
+  "name": "harp_app_introduction",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
