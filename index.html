@@ -9,100 +9,152 @@
       line-height: 1.8;
       background-color: #f9f9f9;
       color: #333;
-      max-width: 800px;
+      max-width: 860px;
       margin: 40px auto;
-      padding: 20px;
+      padding: 30px;
       border-radius: 8px;
       background: #fff;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
-    h1 {
+    h1, h2, h3 {
       color: #2c3e50;
-      font-size: 28px;
+    }
+    h1 {
+      font-size: 32px;
     }
     h2 {
-      color: #34495e;
-      font-size: 22px;
+      font-size: 24px;
+      margin-top: 40px;
+    }
+    h3 {
+      font-size: 20px;
       margin-top: 30px;
     }
-    p {
-      margin-bottom: 16px;
-    }
-    strong {
-      color: #d35400;
-    }
-    em {
+    a {
       color: #2980b9;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    nav {
+      background-color: #f0f0f0;
+      padding: 10px 20px;
+      margin-bottom: 30px;
+      border-radius: 6px;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+    }
+    nav ul li {
+      margin: 6px 0;
     }
     video {
       width: 100%;
-      height: auto;
-      margin-top: 20px;
+      margin: 15px 0;
       border-radius: 4px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
-    #video {
-      margin-top: 20px;
-      display: block;
+    footer {
       text-align: center;
+      margin-top: 50px;
+      background-color: purple;
+      color: yellow;
+      font-size: 20px;
+      padding: 20px;
+      border-radius: 6px;
     }
-    #google_translate_element {
-      top: 10px;  /* 距離頁面頂端 10px */
-      left: 10px; /* 距離頁面左側 10px */
-      z-index: 9999; /* 保證它不會被其他元素遮蓋 */
+    img {
+      margin-top: 10px;
+      max-width: 100%;
     }
   </style>
 </head>
 <body>
-<div id="google-translate-box">
-  <div id="google_translate_element"></div>
-  <!-- Google Translate 的自動翻譯功能 -->
-  <script type="text/javascript">
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({
-        pageLanguage: 'zh-TW',  // 頁面原語言
-        includedLanguages: 'en,es,fr,de,it,zh-CN,ja,ko,th,vi,my,id,ms,ar,he,ru,tg,uk,hi,tr,pt,nl,is,fi,sv,no,ro,kk,bo,mn,la,fil,tl,el',  // 支援的翻譯語言（可擴展）
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-      }, 'google_translate_element');
-    }
-  </script>
-  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-  <p>點擊上方的語言選單以切換語言</p>
-</div>
-<h1>《Harp Real》音高調整經驗分享</h1>
 
-<p>大家好！今天想跟大家聊聊我在使用 <strong>《Harp Real》</strong> 這款豎琴模擬器時，遇到關於 <strong>音高調整</strong> 的一些問題，以及它怎麼影響到我錄製演奏的流程。</p>
+<!-- Google Translate -->
+<div id="google_translate_element"></div>
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'zh-TW',
+      includedLanguages: 'en,zh-CN,ja,ko,fr,de,es,vi,id,ms,th,ru,ar,pt',
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, 'google_translate_element');
+  }
+</script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-<p>《Harp Real》的音高調整，是透過每根弦上方那個像螺絲釘的裝置來操作，這其實是用來調整弦的張力，也就是控制音高的工具。這樣的設計讓每根弦都可以發出正確的音，但也帶來一個明顯的限制。</p>
+<header>
+  <h1>《Harp Real》音高調整經驗分享</h1>
+  <p>作者：周彥廷｜發布於 2025 年 5 月 26 日</p>
+</header>
 
-<p>和 <em>《Perfect Piano》</em> 或 <em><a href="https://chrischou19990904.github.io/Marimba_App_Introduction/index.html" target="_blank">《Marimba Real》</a></em> 不同，《Harp Real》不會直接列出升降音的按鍵，而且它不像真實的豎琴那樣有踏板可以即時改變音高。這代表什麼呢？如果你原本設定好一個大調來彈奏某段旋律，但中途遇到要回到原音的升降記號，你就得 <strong>手動去轉那個“螺絲釘”</strong>，來調整弦的音高。</p>
+<nav>
+  <strong>📖 內容導覽：</strong>
+  <ul>
+    <li><a href="#introduction">前言與基本說明</a></li>
+    <li><a href="#problems">音高調整問題說明</a></li>
+    <li><a href="#examples">實際演奏案例</a></li>
+    <li><a href="#videos">影片示範</a></li>
+    <li><a href="#conclusion">小結與心得</a></li>
+  </ul>
+</nav>
 
-<p><strong>問題是</strong>，一旦你這樣做，就必須中斷演奏。這對整體的 <strong>流暢度影響非常大</strong>，尤其是在螢幕錄製演奏過程時——你可能彈到一半，就被迫停下來調音，整段影片就會有明顯的中斷。</p>
+<main>
+  <section id="introduction">
+    <h2>前言與基本說明</h2>
+    <p>大家好！今天想跟大家聊聊我在使用 <strong>《Harp Real》</strong> 這款豎琴模擬器時，遇到關於 <strong>音高調整</strong> 的一些問題，以及它怎麼影響到我錄製演奏的流程。</p>
+    <p>它模擬真實豎琴的螺絲式調音設計，因此每根弦的音高都要手動轉動來調整，這在某些情況下會影響到錄音的流暢性。</p>
+  </section>
 
-<p>即使你用 <em>InShot</em> 或 <em>CapCut</em> 這類剪輯軟體後期處理，把那些停頓片段剪掉，觀眾還是可能察覺到音樂的斷層。因為豎琴的聲音會像鋼琴那樣持續一段時間，如果突然斷掉，那個變化是很明顯的。</p>
+  <section id="problems">
+    <h2>音高調整問題說明</h2>
+    <p>不像《Perfect Piano》那樣可以自由切換黑白鍵，《Harp Real》無法即時切換升降音。若中途遇到需要變調，演奏者只能中斷演奏、手動調整弦音，這會造成錄製時的明顯停頓與斷層。</p>
+    <p>雖然可以透過剪輯軟體如 InShot 或 CapCut 剪接中斷畫面，但聲音的斷層仍容易被察覺。</p>
+  </section>
 
-<p>實際演奏時，這些音高調整的限制會更明顯地表現在某些曲目上。例如，我在彈奏 <strong><a href="#armor_hero_emperor">《帝皇再臨》</a></strong> 和 <strong><a href="#armor_hero_lava">《Just KO》</a></strong> 時，雖然整體以 <em>C大調</em> 為基礎，但伴奏部分有幾段需要彈奏 <em>降B（也就是升A）</em>。由於《Harp Real》無法即時切換音高，我只能在演奏前就事先決定好每根弦的調性，或者在中途暫停下來手動調整。這會讓整體編曲受到限制，也難以實現原曲的和聲層次。</p>
+  <section id="examples">
+    <h2>實際演奏案例</h2>
 
-<p>另一個明顯的例子是 <strong><a href="#military_music">《中華民國軍樂－下課號》</a></strong>，這首曲子特別挑戰，因為我在演奏中依序使用了 <em>C、D、E、F、G</em> 五種不同的大調。由於每次更換調性都需要手動轉動每根弦上的調整裝置，因此錄製時不得不中斷數次。這支影片我沒有使用 <em>InShot</em> 或 <em>CapCut</em> 做剪接來修掉中斷的部分，觀眾在觀看時可以清楚感受到每次調整時的停頓與斷層，這也凸顯了《Harp Real》在音高處理上的不便。</p>
+    <h3 id="armor_hero_emperor">🎵《帝皇再臨》</h3>
+    <p>此曲主要為 C 大調，但伴奏中出現 <em>升 A</em>（降 B），我在錄製時必須中途暫停調音，造成演奏中斷。</p>
+    <video controls><source src="帝皇再臨.mp4" type="video/mp4"></video>
 
-<p>這也讓我更深刻地體會到：豎琴和鋼琴最大的不同之一，就是 <strong>在音高變化上的即時性</strong>。少了踏板，就無法快速處理升降記號，這讓演奏過程中的編曲和彈奏都變得更具挑戰性。</p>
-<div id="video"></div>
-<strong>下方八部影片為我用Marimba Real彈奏的曲子，各位可以參考一下：</strong>
-<ol>
-<li>穿越時空的思念<br><video controls><source src="穿越時空的思念.mp4"></video></li>
-  <li id="armor_hero_emperor">帝皇再臨<br><video controls><source src="帝皇再臨.mp4"></video></li>
-<li id="armor_hero_lava">Just KO<br><video controls><source src="Just_KO.mp4"></video></li>
-  <li>殭屍復活II<br><video controls><source src="殭屍復活II.mp4"></video></li>
-  <li>Samsung Galaxy Alarm - Homecoming<br><video controls><source src="homecoming.mp4"></video></li>
-<li id="military_music">中華民國軍樂-下課號<br><video controls><source src="中華民國軍樂-下課號.mp4"></video></li>
-  <li>益可膚<br><video controls><source src="益可膚.mp4"></video></li>
-    <li>綠油精<br><video controls><source src="綠油精.mp4"></video></li>
-</ol>
-<footer style="text-align: center; background-color: purple; color:yellow; font-size: 50px">
-  作者：<a href="https://www.facebook.com/profile.php?id=100056441813114&locale=zh_TW" target="_blank" style="color:white;">周彥廷</a>
-  <br>創作日期：西元二零二五年五月二十六日<br>
-  <img width="540" height="720" src="理平頭.jpg" alt="自拍">
-  <br>
+    <h3 id="armor_hero_lava">🎵《Just KO》</h3>
+    <p>同樣有升 A 的需求，若事前沒設定正確的調性，只能手動調整，無法即時處理。</p>
+    <video controls><source src="Just_KO.mp4" type="video/mp4"></video>
+
+    <h3 id="military_music">🎵《中華民國軍樂－下課號》</h3>
+    <p>這首歌用了 C、D、E、F、G 五種大調，每種調性都需要調整弦音，導致影片中出現數次中斷（本影片未經剪接）。</p>
+    <video controls><source src="中華民國軍樂-下課號.mp4" type="video/mp4"></video>
+  </section>
+
+  <section id="videos">
+    <h2>🎥 其他 Marimba Real 演奏作品</h2>
+    <ul>
+      <li>穿越時空的思念<br><video controls><source src="穿越時空的思念.mp4"></video></li>
+      <li>殭屍復活II<br><video controls><source src="殭屍復活II.mp4"></video></li>
+      <li>Samsung Galaxy Alarm - Homecoming<br><video controls><source src="homecoming.mp4"></video></li>
+      <li>益可膚<br><video controls><source src="益可膚.mp4"></video></li>
+      <li>綠油精<br><video controls><source src="綠油精.mp4"></video></li>
+    </ul>
+  </section>
+
+  <section id="conclusion">
+    <h2>🧠 小結與心得</h2>
+    <p>《Harp Real》的音色真實、模擬設計有趣，但缺乏即時變調與踏板功能，對於需要在同一曲中轉調的使用者來說，有實際限制。</p>
+    <p>作為有鋼琴基礎的使用者，我深感兩者在音高操作上的本質差異，也會在日後選擇演奏曲目與工具時，考慮這些限制。</p>
+  </section>
+</main>
+
+<footer>
+  <p>作者：<a href="https://www.facebook.com/profile.php?id=100056441813114&locale=zh_TW" target="_blank" style="color: white;">周彥廷</a></p>
+  <p>創作日期：2025 年 5 月 26 日</p>
+  <img src="理平頭.jpg" alt="作者照片" width="300" height="400">
 </footer>
+
 </body>
 </html>
+
