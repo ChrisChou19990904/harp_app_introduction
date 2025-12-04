@@ -69,6 +69,25 @@
       margin-top: 10px;
       max-width: 100%;
     }
+    #social-share a {
+      text-decoration: none;
+      font-weight: bold;
+    }
+    #social-share a:hover {
+      text-decoration: underline;
+    }
+    #social-share span {
+      margin: 0 5px;
+    }
+    #social-share a#fb-share {
+      color: #4267B2;
+    }
+    #social-share a#line-share {
+      color: #00C300;
+    }
+    #social-share a#twitter-share {
+      color: #1DA1F2;
+    }
   </style>
 </head>
 <body>
@@ -151,7 +170,24 @@
     <p>作為有鋼琴基礎的使用者，我深感兩者在音高操作上的本質差異，也會在日後選擇演奏曲目與工具時，考慮這些限制。</p>
   </section>
 </main>
-
+<script>
+  // 自動抓取當前頁面的 URL
+  var currentUrl = window.location.href;
+  // Facebook 分享
+  document.getElementById("fb-share").href =
+          "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(currentUrl);
+  // Line 分享
+  document.getElementById("line-share").href =
+          "https://social-plugins.line.me/lineit/share?url=" + encodeURIComponent(currentUrl);
+  // X (Twitter) 分享
+  document.getElementById("twitter-share").href =
+          "https://twitter.com/intent/tweet?url=" + encodeURIComponent(currentUrl) + "&text=你的文章標題";
+</script>
+<footer>
+  <p>作者：<a href="https://www.facebook.com/profile.php?id=100056441813114&locale=zh_TW" target="_blank" style="color: white;">周彥廷</a></p>
+  <p>創作日期：2025 年 7 月 5 日</p>
+  <img src="理平頭.jpg" alt="作者照片" width="300" height="400">
+</footer>
 <footer>
   <p>作者：<a href="https://www.facebook.com/profile.php?id=100056441813114&locale=zh_TW" target="_blank" style="color: white;">周彥廷</a></p>
   <p>創作日期：2025 年 7 月 5 日</p>
